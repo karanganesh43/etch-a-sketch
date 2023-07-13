@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" />
     <script src="javascript.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
     <title>Etch-A-Sketch</title>
+    
 </head>
 
 <body>
     <h1>Etch-a-Sketch</h1>
     <div>
-        <div class="controls-bottom">
-            <label for="randomColorToggle">Random Color:</label>
-            <input type="checkbox" id="randomColorToggle" onchange="toggleRandomColor()">
-            <label for="darkenToggle">Darken:</label>
-            <input type="checkbox" id="darkenToggle" onchange="toggleDarken()">
-        </div>
+        <label for="randomColorToggle">Random Colour:</label>
+        <input type="checkbox" class="checkbox" id="randomColorToggle" onchange="toggleRandomColor()">
+
     </div>
     <div class="container"></div>
     <button class="clear-button" onclick="clearGrid()">Clear</button>

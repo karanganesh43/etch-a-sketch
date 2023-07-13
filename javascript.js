@@ -1,6 +1,5 @@
 const container = document.querySelector('.container');
 let randomColor = false;
-let darken = false;
 let gridSize = 16;
 let squareSize = 400 / gridSize;
 
@@ -34,19 +33,7 @@ function changeGridSize() {
 }
 
 function toggleRandomColor() {
-    randomColor = !randomColor;
-    if (randomColor) {
-        darken = false;
-        document.getElementById('darkenToggle').checked = false;
-    }
-}
-
-function toggleDarken() {
-    darken = !darken;
-    if (darken) {
-        randomColor = false;
-        document.getElementById('randomColorToggle').checked = false;
-    }
+    randomColor = !randomColor; 
 }
 
 container.addEventListener('mouseover', function (event) {
@@ -54,12 +41,6 @@ container.addEventListener('mouseover', function (event) {
         if (randomColor) {
             const randomRGB = `rgb(${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(256)})`;
             event.target.style.backgroundColor = randomRGB;
-        } else if (darken) {
-            let currentOpacity = parseFloat(getComputedStyle(event.target).getPropertyValue('opacity'));
-            if (!isNaN(currentOpacity) && currentOpacity < 1) {
-                event.target.style.opacity = (currentOpacity + 0.1).toFixed(1);
-                event.target.style.backgroundColor = 'rgba(0, 0, 0, ' + event.target.style.opacity + ')';
-            }
         } else {
             event.target.style.backgroundColor = 'black';
         }
